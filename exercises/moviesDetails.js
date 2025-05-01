@@ -16,5 +16,18 @@ module.exports.run = function(movies) {
 
 	Write your code below the comment.
 */
+	const axios = require('axios');
 
+	try {
+		const responses = await Promise.all(movies.map(url => axios.get(url)));
+
+		return responses.map(res => ({
+			Title: res.data.Title,
+			Year: res.data.Year,
+			Genre: res.data.Genre
+		}));
+
+	} catch (error) {
+		return `Error: ${error.message}`;
+	}
 };
