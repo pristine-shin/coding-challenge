@@ -1,4 +1,4 @@
-module.exports.run = function(movies) {
+module.exports.run = async function(movies) {
 /*
 	You are given a list of urls that will be used to search up movies.
 	Make a GET call with axios using the given urls to search each movies.
