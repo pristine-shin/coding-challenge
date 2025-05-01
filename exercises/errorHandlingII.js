@@ -8,4 +8,12 @@ module.exports.run = function(url){
 
 	Write your code below the comment.
 */
+	const axios = require('axios');
+	
+	try {
+		const response = await axios.get(url);
+		return response.data;
+	} catch (error) {
+		return `Error: ${error.message}`
+	}
 };
