@@ -10,5 +10,11 @@ Examples:
 Write your code below the comment.
 
 */
-
+	let sum = 0;
+	
+	if (a !== b && a !== c) sum += a;
+	if (b !== a && b !== c) sum += b;
+	if (c !== a && c !== b) sum += c;
+	
+	return sum;
 };
