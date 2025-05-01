@@ -15,5 +15,18 @@ module.exports.run = function(csv){
 
 	Write your code below the comment.
 */
+	let res = [];
 
+	const rows = csv.trim().split('\n');
+	const headers = rows[0].split(',');
+
+	for (let i = 1; i < rows.length; i++) {
+		const values = rows[i].split(',');
+		const obj = {};
+		for (let j = 0; j < values.length; j++) {
+			obj[headers[j]] = values[j];
+		}
+		res.push(obj);
+	}
+	return res;
 };
